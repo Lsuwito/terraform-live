@@ -1,0 +1,13 @@
+# Terraform
+.terraform
+terraform.tfvars
+*.tfstate
+*.tfstate.backup
+.terraform.lock.hcl
+
+# Terragrunt
+.terragrunt-cache
+
+# OSx
+.history
+.DS_Store
