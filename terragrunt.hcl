@@ -11,6 +11,11 @@ generate "provider" {
   contents = <<EOF
 provider "aws" {
   region = "${local.aws_region}"
+  default_tags {
+    tags = {
+      ProvisionedBy = "Terraform"
+    }
+  }
 }
 EOF
 }
