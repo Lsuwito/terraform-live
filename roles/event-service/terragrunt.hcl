@@ -1,5 +1,5 @@
 terraform {
-  source = "git::git@github.com:Lsuwito/terraform-module.git//service_iam_role?ref=v0.0.1"
+  source = "git::git@github.com:Lsuwito/terraform-module.git//service-iam-role?ref=v0.0.4"
 }
 
 include {
@@ -8,7 +8,7 @@ include {
 
 inputs = {
   role_name = "event-service"
-  aws_services = ["lambda.amazonaws.com"]
+  aws_services = ["lambda.amazonaws.com", "apigateway.amazonaws.com"]
   inline_policy = <<EOF
 {
   "Version": "2012-10-17",
@@ -22,6 +22,8 @@ inputs = {
         "kinesis:ListShards",
         "kinesis:ListStreams",
         "kinesis:SubscribeToShard",
+        "kinesis:PutRecord",
+        "kinesis:PutRecords",
         "logs:CreateLogGroup",
         "logs:CreateLogStream",
         "logs:PutLogEvents"

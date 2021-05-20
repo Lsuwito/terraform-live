@@ -1,5 +1,5 @@
 terraform {
-  source = "git::git@github.com:Lsuwito/terraform-module.git//serverless_stream_processor?ref=v0.0.3"
+  source = "git::git@github.com:Lsuwito/terraform-module.git//lambda?ref=v0.0.4"
 }
 
 include {
@@ -7,7 +7,6 @@ include {
 }
 
 inputs = {
-  stream_name = "skitterbytes-event"
   function_name = "skitterbytes-event-processor"
   function_runtime = "go1.x"
   function_handler = "main"
