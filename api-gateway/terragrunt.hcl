@@ -1,5 +1,5 @@
 terraform {
-  source = "git::git@github.com:Lsuwito/terraform-module.git//api-gateway?ref=v0.0.5"
+  source = "git::git@github.com:Lsuwito/terraform-module.git//api-gateway?ref=master"
 }
 
 include {
@@ -7,6 +7,9 @@ include {
 }
 
 inputs = {
-  name = "skitterbytes-api"
-  cognito_user_pool_name = "skitterbytes"
+  name                    = "skitterbytes-api"
+  stage_name              = "prod"
+  cognito_user_pool_name  = "skitterbytes"
+  endpoint_type           = "REGIONAL"
+  event_service_role_name = "event-service"
 }
